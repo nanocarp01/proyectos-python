@@ -6,8 +6,8 @@ from math import acos, degrees
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
-cap = cv2.VideoCapture("video_01.mp4")
-#cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture("video_01.mp4")
+cap = cv2.VideoCapture(0)
 
 up = False
 down = False
@@ -69,6 +69,7 @@ with mp_pose.Pose(
             cv2.circle(output, (x2, y2), 6, (128, 0, 250), 4)
             cv2.circle(output, (x3, y3), 6, (255, 191, 0), 4)
             cv2.rectangle(output, (0, 0), (60, 60), (255, 255, 0), -1)
+
             cv2.putText(output, str(int(angle)), (x2 + 30, y2), 1, 1.5, (128, 0, 250), 2)
             cv2.putText(output, str(count), (10, 50), 1, 3.5, (128, 0, 250), 2)
             cv2.imshow("output", output)
